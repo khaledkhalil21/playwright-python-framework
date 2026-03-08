@@ -1,9 +1,15 @@
+import pytest
 from playwright.sync_api import sync_playwright
 
-def test_google():
+
+@pytest.fixture
+def page():
+
     with sync_playwright() as p:
+
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
-        page.goto("https://google.com")
-        assert "Google" in page.title()
+
+        yield page
+
         browser.close()
