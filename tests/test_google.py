@@ -16,3 +16,4 @@ def test_google_search(page, search_term):
 
     google.open()
     google.search(search_term)
+    assert False
