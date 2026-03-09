@@ -1,3 +1,6 @@
+from config.settings import BASE_URL
+
+
 class GooglePage:
 
     def __init__(self, page):
@@ -5,7 +8,7 @@ class GooglePage:
         self.search_box = page.locator("textarea[name='q']")
 
     def open(self):
-        self.page.goto("https://www.google.com")
+        self.page.goto(BASE_URL)
 
     def search(self, text):
         self.search_box.fill(text)
