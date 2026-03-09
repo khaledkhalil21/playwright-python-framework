@@ -29,4 +29,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --html=reports/report.html
+          pytest -n auto --browser chromium --browser firefox --browser webkit --html=reports/report.html
